@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-!pip install opencv-python
 import os
 import cv2 as cv
+import tensorflow as tf
 model = tf.keras.models.load_model('tp.model.keras')
 image_nb = 1
 
-while os.path.isfile(f"image{image_nb}.png"):
+while os.path.isfile(f"img{image_nb}.png"):
     img_path = f"image{image_nb}.png"
     img = cv.imread(img_path, cv.IMREAD_GRAYSCALE)
     resized_img = cv.resize(img, (28 , 28))
